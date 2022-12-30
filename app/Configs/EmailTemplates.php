@@ -1,17 +1,9 @@
 <?php
-/**
- * Шаблоны электронных писем
- *
- * @author  Дмитрий Щербаков <atomcms@ya.ru>
- * @version 21.11.2019
- */
 
 namespace Lemurro\Api\App\Configs;
 
 /**
- * Class EmailTemplates
- *
- * @package Lemurro\Api\App\Configs
+ * Шаблоны электронных писем
  */
 class EmailTemplates
 {

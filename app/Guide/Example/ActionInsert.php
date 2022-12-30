@@ -19,7 +19,7 @@ class ActionInsert extends Action
      */
     public function run($data)
     {
-        $id = $this->dbal->transactional(function() use ($data): int {
+        $id = $this->dbal->transactional(function () use ($data): int {
             $cnt = $this->dbal->insert('guide_example', [
                 'name' => $data['name'],
                 'created_at' => $this->dic['datetimenow'],

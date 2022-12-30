@@ -1,17 +1,9 @@
 <?php
-/**
- * Параметры cron-задач
- *
- * @author  Дмитрий Щербаков <atomcms@ya.ru>
- * @version 21.11.2019
- */
 
 namespace Lemurro\Api\App\Configs;
 
 /**
- * Class SettingsCron
- *
- * @package Lemurro\Api\App\Configs
+ * Параметры cron-задач
  */
 class SettingsCron
 {

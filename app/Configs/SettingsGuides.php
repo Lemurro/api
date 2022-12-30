@@ -1,17 +1,9 @@
 <?php
-/**
- * Параметры справочников
- *
- * @author  Дмитрий Щербаков <atomcms@ya.ru>
- * @version 21.11.2019
- */
 
 namespace Lemurro\Api\App\Configs;
 
 /**
- * Class SettingsGuides
- *
- * @package Lemurro\Api\App\Configs
+ * Параметры справочников
  */
 class SettingsGuides
 {

@@ -1,17 +1,9 @@
 <?php
-/**
- * Параметры email
- *
- * @author  Дмитрий Щербаков <atomcms@ya.ru>
- * @version 21.11.2019
- */
 
 namespace Lemurro\Api\App\Configs;
 
 /**
- * Class SettingsMail
- *
- * @package Lemurro\Api\App\Configs
+ * Параметры email
  */
 class SettingsMail
 {

@@ -1,19 +1,11 @@
 <?php
-/**
- * Перед изменением пользователя
- *
- * @version 19.04.2018
- * @author  Дмитрий Щербаков <atomcms@ya.ru>
- */
 
 namespace Lemurro\Api\App\RunBefore\Users;
 
 use Lemurro\Api\Core\Abstracts\Action;
 
 /**
- * Class Save
- *
- * @package Lemurro\Api\App\RunBefore\Users
+ * Перед изменением пользователя
  */
 class Save extends Action
 {

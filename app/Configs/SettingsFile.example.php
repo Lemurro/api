@@ -1,17 +1,9 @@
 <?php
-/**
- * Параметры загрузки файлов
- *
- * @author  Дмитрий Щербаков <atomcms@ya.ru>
- * @version 15.05.2019
- */
 
 namespace Lemurro\Api\App\Configs;
 
 /**
- * Class SettingsFile
- *
- * @package Lemurro\Api\App\Configs
+ * Параметры загрузки файлов
  */
 class SettingsFile
 {

@@ -1,19 +1,11 @@
 <?php
-/**
- * Список мероприятий
- *
- * @version 29.10.2018
- * @author  Дмитрий Щербаков <atomcms@ya.ru>
- */
 
 namespace Lemurro\Api\App\Example;
 
 use Lemurro\Api\Core\Abstracts\Controller;
 
 /**
- * Class ControllerIndex
- *
- * @package Lemurro\Api\App\Example
+ * Список мероприятий
  */
 class ControllerIndex extends Controller
 {

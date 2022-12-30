@@ -24,7 +24,7 @@ class ActionRemove extends Action
             return Response::error404('Запись не найдена');
         }
 
-        $this->dbal->transactional(function() use ($id, $record): void {
+        $this->dbal->transactional(function () use ($id, $record): void {
             $this->dbal->update('guide_example', [
                 'name' => $record['name'] . ' (удалено: ' . $this->dic['datetimenow'] . ')',
                 'deleted_at' => $this->dic['datetimenow'],

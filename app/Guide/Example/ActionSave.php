@@ -25,7 +25,7 @@ class ActionSave extends Action
             return Response::error404('Запись не найдена');
         }
 
-        $this->dbal->transactional(function() use ($id, $data): void {
+        $this->dbal->transactional(function () use ($id, $data): void {
             $this->dbal->update('guide_example', [
                 'name' => $data['name'],
                 'updated_at' => $this->dic['datetimenow'],

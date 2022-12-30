@@ -1,10 +1,4 @@
 <?php
-/**
- * После блокировки \ разблокировки пользователя
- *
- * @version 03.06.2019
- * @author  Дмитрий Щербаков <atomcms@ya.ru>
- */
 
 namespace Lemurro\Api\App\RunAfter\Users;
 
@@ -12,9 +6,7 @@ use Lemurro\Api\Core\Abstracts\Action;
 use Lemurro\Api\Core\Helpers\Response;
 
 /**
- * Class LockUnlock
- *
- * @package Lemurro\Api\App\RunAfter\Users
+ * После блокировки \ разблокировки пользователя
  */
 class LockUnlock extends Action
 {

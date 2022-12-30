@@ -1,19 +1,11 @@
 <?php
-/**
- * Перед добавлением пользователя
- *
- * @version 19.04.2018
- * @author  Дмитрий Щербаков <atomcms@ya.ru>
- */
 
 namespace Lemurro\Api\App\RunBefore\Users;
 
 use Lemurro\Api\Core\Abstracts\Action;
 
 /**
- * Class Insert
- *
- * @package Lemurro\Api\App\RunBefore\Users
+ * Перед добавлением пользователя
  */
 class Insert extends Action
 {
