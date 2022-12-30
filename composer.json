@@ -12,7 +12,8 @@
     }
   ],
   "scripts": {
-    "phpcs74": "phpcs -nsp ./app --runtime-set testVersion 7.4 --standard=PHPCompatibility --standard=PSR1 --standard=PSR12 --runtime-set installed_paths ./vendor/phpcompatibility/php-compatibility/PHPCompatibility --report=xml --report-file=./phpcs-report.xml",
+    "phpcs80": "phpcs -nsp ./app --runtime-set testVersion 8.0 --standard=PHPCompatibility --standard=PSR1 --standard=PSR12 --runtime-set installed_paths ./vendor/phpcompatibility/php-compatibility/PHPCompatibility --report=xml --report-file=./phpcs-report.xml",
+    "run-before-test": "php -S 127.0.0.1:8000 -t public",
     "test": [
       "codecept clean",
       "codecept run api"
@@ -27,16 +28,16 @@
     "sort-packages": true
   },
   "require": {
-    "lemurro/api-core": "1.11.*",
-    "php": "7.4.*"
+    "lemurro/api-core": "3.0.*",
+    "php": "8.0.*"
   },
   "require-dev": {
-    "codeception/codeception": "4.1.29",
-    "codeception/module-asserts": "2.0.1",
-    "codeception/module-db": "2.0.1",
-    "codeception/module-phpbrowser": "2.0.1",
-    "codeception/module-rest": "2.0.1",
-    "phpcompatibility/php-compatibility": "9.3.5",
+    "codeception/codeception": "5.0.*",
+    "codeception/module-asserts": "3.0.*",
+    "codeception/module-db": "3.1.*",
+    "codeception/module-phpbrowser": "3.0.*",
+    "codeception/module-rest": "3.3.*",
+    "phpcompatibility/php-compatibility": "9.3.*",
     "symfony/var-dumper": "5.4.*"
   }
 }
