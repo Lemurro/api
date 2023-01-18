@@ -30,13 +30,13 @@ class ActionInsert extends Action
                 throw new RuntimeException('Произошла ошибка при добавлении записи, попробуйте ещё раз', 500);
             }
 
-            $id = $this->dbal->lastInsertId();
+            $id = (int)$this->dbal->lastInsertId();
 
             $this->dic['datachangelog']->insert('example', 'insert', $id, $data);
 
             if (isset($data['files']) && is_array($data['files'])) {
                 $container_type = 'example';
-                $container_id = $id;
+                $container_id = (string)$id;
 
                 $manipulate = (new FileManipulate($this->dic))->run(
                     $data['files'],

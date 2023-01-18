@@ -12,10 +12,8 @@ class ActionIndex extends Action
 {
     /**
      * Список справочника
-     *
-     * @return array
      */
-    public function run()
+    public function run(): array
     {
         $sql = <<<'SQL'
             SELECT id, name FROM guide_example
@@ -23,7 +21,7 @@ class ActionIndex extends Action
             ORDER BY name ASC
             SQL;
 
-        $items = (array)$this->dbal->fetchAllAssociative($sql);
+        $items = $this->dbal->fetchAllAssociative($sql);
 
         return Response::data([
             'js_class' => 'guideExample',

@@ -10,6 +10,10 @@ class AuthCest
     protected string $code;
     protected string $session;
 
+    /**
+     * @psalm-suppress UndefinedClass
+     * @psalm-suppress UndefinedMagicMethod
+     */
     public function _before(ApiTester $I)
     {
         if (!empty($this->session)) {
@@ -17,7 +21,10 @@ class AuthCest
         }
     }
 
-    // tests
+    /**
+     * @psalm-suppress UndefinedClass
+     * @psalm-suppress UndefinedMagicMethod
+     */
     public function getCode(ApiTester $I)
     {
         $I->sendGet('/auth/code', [
@@ -35,6 +42,9 @@ class AuthCest
 
     /**
      * @depends getCode
+     *
+     * @psalm-suppress UndefinedClass
+     * @psalm-suppress UndefinedMagicMethod
      */
     public function sendCode(ApiTester $I)
     {
@@ -64,6 +74,9 @@ class AuthCest
 
     /**
      * @depends sendCode
+     *
+     * @psalm-suppress UndefinedClass
+     * @psalm-suppress UndefinedMagicMethod
      */
     public function checkSession(ApiTester $I)
     {
@@ -76,6 +89,9 @@ class AuthCest
 
     /**
      * @depends checkSession
+     *
+     * @psalm-suppress UndefinedClass
+     * @psalm-suppress UndefinedMagicMethod
      */
     public function getKeys(ApiTester $I)
     {

@@ -3,6 +3,10 @@
 use Codeception\Util\HttpCode;
 use Lemurro\AbstractCest;
 
+/**
+ * @psalm-suppress UndefinedMagicMethod
+ * @psalm-suppress UndefinedClass
+ */
 class BExampleCest extends AbstractCest
 {
     private string $default_name = 'test record';
@@ -15,7 +19,7 @@ class BExampleCest extends AbstractCest
     private int $record_id;
     private string $download_token;
 
-    public function getIndex(ApiTester $I)
+    public function getIndex(ApiTester $I): void
     {
         $I->sendGet('/example');
 
@@ -29,7 +33,7 @@ class BExampleCest extends AbstractCest
     /**
      * @depends getIndex
      */
-    public function upload(ApiTester $I)
+    public function upload(ApiTester $I): void
     {
         $I->sendPost('/file/upload', ['inline' => 0], ['uploadfile' => codecept_data_dir($this->file1_name)]);
 
@@ -45,7 +49,7 @@ class BExampleCest extends AbstractCest
     /**
      * @depends upload
      */
-    public function insertRecord(ApiTester $I)
+    public function insertRecord(ApiTester $I): void
     {
         $I->sendPost('/example', [
             'data' => [
@@ -76,7 +80,7 @@ class BExampleCest extends AbstractCest
     /**
      * @depends insertRecord
      */
-    public function getRecord(ApiTester $I)
+    public function getRecord(ApiTester $I): void
     {
         $I->sendGet('/example/' . $this->record_id);
 
@@ -102,7 +106,7 @@ class BExampleCest extends AbstractCest
     /**
      * @depends getRecord
      */
-    public function upload2(ApiTester $I)
+    public function upload2(ApiTester $I): void
     {
         $I->sendPost('/file/upload', ['inline' => 0], ['uploadfile' => codecept_data_dir($this->file2_name)]);
 
@@ -118,7 +122,7 @@ class BExampleCest extends AbstractCest
     /**
      * @depends upload2
      */
-    public function saveRecord(ApiTester $I)
+    public function saveRecord(ApiTester $I): void
     {
         $I->sendPost('/example/' . $this->record_id, [
             'data' => [
@@ -151,7 +155,7 @@ class BExampleCest extends AbstractCest
     /**
      * @depends saveRecord
      */
-    public function getRecordAgain(ApiTester $I)
+    public function getRecordAgain(ApiTester $I): void
     {
         $I->sendGet('/example/' . $this->record_id);
 
@@ -177,7 +181,7 @@ class BExampleCest extends AbstractCest
     /**
      * @depends getRecordAgain
      */
-    public function downloadPrepare(ApiTester $I)
+    public function downloadPrepare(ApiTester $I): void
     {
         $I->sendPost('/file/download/prepare', [
             'fileid' => $this->file2_id,
@@ -196,7 +200,7 @@ class BExampleCest extends AbstractCest
     /**
      * @depends downloadPrepare
      */
-    public function downloadRun(ApiTester $I)
+    public function downloadRun(ApiTester $I): void
     {
         $I->sendGet('/file/download/run', [
             'token' => $this->download_token,
@@ -215,7 +219,7 @@ class BExampleCest extends AbstractCest
     /**
      * @depends downloadRun
      */
-    public function removeRecord(ApiTester $I)
+    public function removeRecord(ApiTester $I): void
     {
         $I->sendPost('/example/' . $this->record_id . '/remove');
 

@@ -3,6 +3,10 @@
 use Codeception\Util\HttpCode;
 use Lemurro\AbstractCest;
 
+/**
+ * @psalm-suppress UndefinedMagicMethod
+ * @psalm-suppress UndefinedClass
+ */
 class BGuideExampleCest extends AbstractCest
 {
     private string $type = 'example';
@@ -10,7 +14,7 @@ class BGuideExampleCest extends AbstractCest
     private string $modified_name = 'test record modified';
     private int $record_id;
 
-    public function getIndex(ApiTester $I)
+    public function getIndex(ApiTester $I): void
     {
         $I->sendGet('/guide/' . $this->type);
 
@@ -24,7 +28,7 @@ class BGuideExampleCest extends AbstractCest
     /**
      * @depends getIndex
      */
-    public function insertRecord(ApiTester $I)
+    public function insertRecord(ApiTester $I): void
     {
         $I->sendPost('/guide/' . $this->type, [
             'data' => [
@@ -48,7 +52,7 @@ class BGuideExampleCest extends AbstractCest
     /**
      * @depends insertRecord
      */
-    public function getRecord(ApiTester $I)
+    public function getRecord(ApiTester $I): void
     {
         $I->sendGet('/guide/' . $this->type . '/' . $this->record_id);
 
@@ -66,7 +70,7 @@ class BGuideExampleCest extends AbstractCest
     /**
      * @depends getRecord
      */
-    public function saveRecord(ApiTester $I)
+    public function saveRecord(ApiTester $I): void
     {
         $I->sendPost('/guide/' . $this->type . '/' . $this->record_id, [
             'data' => [
@@ -89,7 +93,7 @@ class BGuideExampleCest extends AbstractCest
     /**
      * @depends saveRecord
      */
-    public function removeRecord(ApiTester $I)
+    public function removeRecord(ApiTester $I): void
     {
         $I->sendPost('/guide/' . $this->type . '/' . $this->record_id . '/remove');
 

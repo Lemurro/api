@@ -1,11 +1,15 @@
 <?xml version="1.0"?>
 <psalm
-    errorLevel="2"
+    errorLevel="3"
 >
     <projectFiles>
         <directory name="app" />
         <directory name="public" />
         <directory name="tests" />
         <file name="lemurro-cron.php" />
+        <ignoreFiles>
+            <file name="app/Configs/*.example.php" />
+            <directory name="tests/_support/_generated" />
+        </ignoreFiles>
     </projectFiles>
 </psalm>

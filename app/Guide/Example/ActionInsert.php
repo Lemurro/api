@@ -14,10 +14,8 @@ class ActionInsert extends Action
      * Добавление элемента в справочник
      *
      * @param array $data Массив данных
-     *
-     * @return array
      */
-    public function run($data)
+    public function run($data): array
     {
         $id = $this->dbal->transactional(function () use ($data): int {
             $cnt = $this->dbal->insert('guide_example', [
@@ -25,15 +23,19 @@ class ActionInsert extends Action
                 'created_at' => $this->dic['datetimenow'],
             ]);
             if ($cnt !== 1) {
-                return Response::error500('Произошла ошибка при добавлении записи, попробуйте ещё раз');
+                return 0;
             }
 
-            $id = $this->dbal->lastInsertId();
+            $id = (int)$this->dbal->lastInsertId();
 
             $this->dic['datachangelog']->insert('guide_example', 'insert', $id, $data);
 
             return $id;
         });
+
+        if ($id === 0) {
+            return Response::error500('Произошла ошибка при добавлении записи, попробуйте ещё раз');
+        }
 
         $data['id'] = $id;
 

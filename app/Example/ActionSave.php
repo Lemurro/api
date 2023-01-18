@@ -38,7 +38,7 @@ class ActionSave extends Action
 
             if (isset($data['files']) && is_array($data['files'])) {
                 $container_type = 'example';
-                $container_id = $id;
+                $container_id = (string)$id;
 
                 $manipulate = (new FileManipulate($this->dic))->run(
                     $data['files'],
