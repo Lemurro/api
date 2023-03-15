@@ -56,6 +56,16 @@ TPL;
     const FOOTER = <<<TPL
                     <tr>
                         <td>
+                            Это письмо сформировано автоматически. Пожалуйста, не отвечайте на него.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <strong>С уважением,</strong><br>
                             команда Lemurro<br>
                             <a href="mailto:info@bestion.ru" style="color:#8e694d;">info@bestion.ru</a>
