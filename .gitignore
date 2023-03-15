@@ -11,6 +11,8 @@ app/Configs/SettingsSMS.php
 http/http-client.env.json
 logs/**/*.log
 tests/api.suite.yml
-upload
+upload/documents/**/*
+upload/temp/**/*
+!upload/documents/.gitkeep
+!upload/temp/.gitkeep
 vendor
-composer.lock
