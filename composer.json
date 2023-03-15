@@ -28,8 +28,14 @@
   "config": {
     "sort-packages": true
   },
+  "repositories": [
+    {
+      "url": "D:\\GIT\\Lemurro\\api-core",
+      "type": "path"
+    }
+  ],
   "require": {
-    "lemurro/api-core": "3.0.*",
+    "lemurro/api-core": "dev-main",
     "php": "8.0.*"
   },
   "require-dev": {
