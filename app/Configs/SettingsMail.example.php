@@ -116,4 +116,16 @@ class SettingsMail
      * @var string
      */
     const RESERVE_SMTP_PASSWORD = 'PASSWORD';
+
+    /**
+     * SMTP_AUTH
+     * @var boolean
+     */
+    const SMTP_AUTH = true;
+
+    /**
+     * RESERVE_SMTP_AUTH
+     * @var boolean
+     */
+    const RESERVE_SMTP_AUTH = true;
 }
