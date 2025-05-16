@@ -1,3 +1,4 @@
+.idea
 .vscode
 app/Configs/SettingsAuth.php
 app/Configs/SettingsCron.php
